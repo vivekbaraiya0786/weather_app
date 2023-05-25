@@ -49,10 +49,9 @@ the weather data in depth for the selected location.
 
 https://github.com/vivekbaraiya0786/media_player_flutter/assets/126376629/1db836aa-b8a4-475c-bfde-20fe1a77ace7
 
-<img align = "left" src="https://user-images.githubusercontent.com/126376629/236149363-0492ab12-e7bf-4b40-8fc0-020db7990bd2.png" width="220px">
-<img align = "left" src="https://user-images.githubusercontent.com/126376629/236149379-aeccf17a-2749-433a-9f58-3abe2c0adf44.png" width="220px">
-<img  src="https://user-images.githubusercontent.com/126376629/236149381-3a7026f5-39d0-455a-a1ea-fc04bfea23d6.png" width="220px">
-
+<img align = "left" src="https://github.com/vivekbaraiya0786/weather_app/assets/126376629/9fe2cb5a-935a-483f-862a-44ed50879691" width="220px">
+<img align = "left" src="https://github.com/vivekbaraiya0786/weather_app/assets/126376629/b9ce56fd-565a-48fe-988f-90e868a65ad1" width="220px">
+<img  src="https://github.com/vivekbaraiya0786/weather_app/assets/126376629/ff1e42ad-8343-4b42-b45f-f055b4f95ec5" width="220px">
 
 
 
