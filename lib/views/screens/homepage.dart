@@ -249,14 +249,24 @@ class _HomePageState extends State<HomePage> {
                                           height: _height * 0.02,
                                         ),
                                         Container(
-                                          height: _height * 0.3,
-                                          width: _width * 0.7,
-                                          decoration: const BoxDecoration(
-                                              image: DecorationImage(
-                                            image: AssetImage(
-                                                "assets/images/1.png"),
-                                          )),
+                                          height: _height * 0.20,
+                                          width: _width * 0.5,
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                              // image: NetworkImage(
+                                              //     "http:${weatherdata.icon}"),
+                                              // fit: BoxFit.cover,
+                                              image: AssetImage("assets/images/1.png"),
+                                            ),
+                                          ),
                                         ),
+
+                                        Text("${weatherdata.text}",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20)),
+                                        SizedBox(height: _height * 0.02),
                                         SingleChildScrollView(
                                           scrollDirection: Axis.horizontal,
                                           child: Row(
@@ -401,55 +411,81 @@ class _HomePageState extends State<HomePage> {
                                           scrollDirection: Axis.horizontal,
                                           child: Row(
                                             children: [
-                                              ...weatherdata.hour.map((e) => Container(
-                                                height: 70,
-                                                width: 160,
-                                                margin: EdgeInsets.all(10),
-                                                decoration: BoxDecoration(
-                                                  color: Colors.blue,
-                                                   borderRadius: BorderRadius.circular(20),
-                                                ),
-                                                child: Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                  children: [
-                                                    Expanded(
-                                                      child: Column(
-                                                        children: [
-                                                          Container(
-                                                            height: 50,
-                                                            width: 50,
-                                                          //   decoration: BoxDecoration(
-                                                          //     image: DecorationImage(
-                                                          //      image: NetworkImage(
-                                                          //
-                                                          //      );
-                                                          //       fit: BoxFit.cover,
-                                                          //   ),
-                                                          // )),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                    Expanded(
-                                                      child: Column(children: [
-                                                        SizedBox(
-                                                          height: _height * 0.01,
+                                              ...weatherdata.hour
+                                                  .map((e) => Container(
+                                                        height: 70,
+                                                        width: 160,
+                                                        margin:
+                                                            EdgeInsets.all(10),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.blue,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(20),
                                                         ),
-                                                        Text(e['time'].toString().split(" ")[1],style: TextStyle(
-                                                            color: Colors.white
-                                                        ),),
-                                                        SizedBox(
-                                                          height: _height * 0.01,
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceEvenly,
+                                                          children: [
+                                                            Expanded(
+                                                              child: Column(
+                                                                children: [
+                                                                  Container(
+                                                                    height: 70,
+                                                                    width: 80,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                            image:
+                                                                                DecorationImage(
+                                                                      image: NetworkImage(
+                                                                          "http:${weatherdata.icon}"),
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    )),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              child: Column(
+                                                                  children: [
+                                                                    SizedBox(
+                                                                      height:
+                                                                          _height *
+                                                                              0.01,
+                                                                    ),
+                                                                    Text(
+                                                                      e['time']
+                                                                          .toString()
+                                                                          .split(
+                                                                              " ")[1],
+                                                                      style: TextStyle(
+                                                                          color:
+                                                                              Colors.white),
+                                                                    ),
+                                                                    SizedBox(
+                                                                      height:
+                                                                          _height *
+                                                                              0.01,
+                                                                    ),
+                                                                    Text(
+                                                                      "${e['temp_c']} °c",
+                                                                      style:
+                                                                          TextStyle(
+                                                                        color: Colors
+                                                                            .white,
+                                                                        fontSize:
+                                                                            18,
+                                                                      ),
+                                                                    )
+                                                                  ]),
+                                                            ),
+                                                          ],
                                                         ),
-                                                        Text("${e['temp_c']} °c",style: TextStyle(
-                                                            color: Colors.white,
-                                                          fontSize: 18,
-                                                        ),)
-                                                      ]),
-                                                    ),
-                                                  ],
-                                                ),
-                                              )).toList()
+                                                      ))
+                                                  .toList()
                                             ],
                                           ),
                                         ),
@@ -464,13 +500,6 @@ class _HomePageState extends State<HomePage> {
                                                   onPressed: () {},
                                                   icon: const Icon(
                                                     Icons.home,
-                                                    color: Colors.white,
-                                                    size: 30,
-                                                  )),
-                                              IconButton(
-                                                  onPressed: () {},
-                                                  icon: const Icon(
-                                                    Icons.search,
                                                     color: Colors.white,
                                                     size: 30,
                                                   )),

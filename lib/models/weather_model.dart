@@ -16,7 +16,7 @@ class WeatherModel {
   int is_day;
   Map condition;
   String text;
-  // String icon;
+  String icon;
   int code;
   double wind_mph;
   double wind_kph;
@@ -38,8 +38,9 @@ class WeatherModel {
   List hour;
   String time;
   double temp;
-  // String icon;
-
+   String icon1;
+  String sunrise;
+  String sunset;
 
 
   WeatherModel({
@@ -60,7 +61,7 @@ class WeatherModel {
     required this.is_day,
     required this.condition,
     required this.text,
-    // required this.icon,
+    required this.icon,
     required this.code,
     required this.wind_mph,
     required this.wind_kph,
@@ -82,6 +83,9 @@ class WeatherModel {
     required this.time,
     required this.hour,
 required this.temp,
+    required this.icon1,
+    required this.sunrise,
+    required this.sunset,
 // required this.icon,
 
 
@@ -106,6 +110,7 @@ required this.temp,
       is_day: data['current']['is_day'],
       condition: data['current']['condition'],
       text: data['current']['condition']['text'],
+      icon: data['current']['condition']['icon'],
       code: data['current']['condition']['code'],
       wind_mph: data['current']['wind_mph'],
       wind_kph: data['current']['wind_kph'],
@@ -128,6 +133,9 @@ required this.temp,
       hour: data['forecast']['forecastday'][i]['hour'],
       time: data['forecast']['forecastday'][i]['hour'][i]['time'],
       temp: data['forecast']['forecastday'][i]['hour'][i]['temp_c'],
+      icon1: data['forecast']['forecastday'][i]['hour'][i]['condition']['icon'],
+      sunrise: data['forecast']['forecastday'][0]['astro']['sunrise'],
+      sunset: data['forecast']['forecastday'][0]['astro']['sunset'],
       // temp: data['forecast']['forecastday'][i]['hour'][i]['temp_c'],
       // icon: data['forecast']['forecastday'][i]['hour'][i]['condition']['icon'],
 

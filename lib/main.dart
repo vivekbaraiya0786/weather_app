@@ -7,6 +7,7 @@ import 'package:weather_app/models/appthememodel.dart';
 import 'package:weather_app/utils/apptheme.dart';
 import 'package:weather_app/views/screens/forecast_report_page.dart';
 import 'package:weather_app/views/screens/homepage.dart';
+import 'package:weather_app/views/screens/spalsh_screen.dart';
 import 'contoller/provider/connectivty_provider.dart';
 
 void main() async {
@@ -38,9 +39,11 @@ void main() async {
             false)
             ? ThemeMode.light
             : ThemeMode.dark,
+        initialRoute: 'splash',
         routes: {
           '/': (context) => HomePage(),
           'forecast': (context) => Forecast_page(),
+          'splash': (context) => spalsh_screen(),
         },
       ),
     ),
